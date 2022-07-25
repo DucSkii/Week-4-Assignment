@@ -104,11 +104,17 @@ numberButtons.forEach((button) => {
 
 operatorButtons.forEach((button) => {
   button.addEventListener('click', () => {
+    if (calculatorDisplayText === '.') {
+      return
+    }
     addOperator(button.innerText)
   })
 })
 
 equalsButton.addEventListener('click', () => {
+  if (calculatorDisplayText === '.') {
+    return
+  }
   calculate()
 })
 
