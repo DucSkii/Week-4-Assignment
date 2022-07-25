@@ -20,7 +20,6 @@ const clear = () => {
 }
 
 const deleteFunction = () => {
-  console.log('sd')
   if (calculatorDisplayText === '0' || calculatorDisplayText === '') {
     return
   } else {
@@ -33,7 +32,6 @@ const deleteFunction = () => {
 }
 
 const addNumber = (number) => {
-  console.log(hasAnswer)
   if (number === '.' && calculatorDisplayText.includes('.')) {
     return
   }
@@ -61,7 +59,6 @@ const addOperator = (operator) => {
   calculatorDisplayText = ''
   hasAnswer = false
   updateDisplay()
-  calculate()
 }
 
 const getSum = (firstNumber, secondNumber, operator) => {
@@ -72,7 +69,7 @@ const getSum = (firstNumber, secondNumber, operator) => {
     result = firstNumber - secondNumber
   } else if (operator === '*') {
     result = firstNumber * secondNumber
-  } else if (operator === '÷') {
+  } else if (operator === '/') {
     result = firstNumber / secondNumber
   }
   calculatorDisplayText = result
@@ -95,7 +92,6 @@ const calculate = () => {
 }
 
 const updateDisplay = () => {
-  console.log('calculatorDisplayText', calculatorDisplayText)
   calculatorDisplay.innerText = calculatorDisplayText
   previousDisplay.innerText = previousDisplayText
 }
